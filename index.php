@@ -16,10 +16,10 @@ $switch = filter_input(INPUT_POST, 'switch');
     
     <?php
     if (isset($submit)) {
-        if ($switch == 1) { ?>
+        if ($switch == 'czk_euro') { ?>
         <?=$euro ?> Korun je <?=$euro / euroczk ?> Eur
         <?php
-        } elseif ($switch == 2) { ?>
+        } elseif ($switch == 'euro_czk') { ?>
             <?=$euro ?> Eur je <?=$euro * euroczk ?> KČ
             <?php 
         }
@@ -28,8 +28,8 @@ else { ?>
     <form action="index.php" method="post">
     
     Peníze : <input type="text" name="euro" id="euro">
-    KČ na Euro: <input type="radio" name="switch" value="1" id="switch">
-    Euro na KČ: <input type="radio" name="switch" value="2" id="switch">
+    KČ na Euro: <input type="radio" name="switch" value="czk_euro" id="switch">
+    Euro na KČ: <input type="radio" name="switch" value="euro_czk" id="switch">
         <input type="submit" value="submit" name="submit">
     </form>
 
