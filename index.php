@@ -1,6 +1,6 @@
 <?php
 $euro = filter_input(INPUT_POST, 'euro');
-$kc = 27;
+define('euroczk', 27);
 $submit = filter_input(INPUT_POST, 'submit');
 $switch = filter_input(INPUT_POST, 'switch');
 ?>
@@ -17,10 +17,10 @@ $switch = filter_input(INPUT_POST, 'switch');
     <?php
     if (isset($submit)) {
         if ($switch == 1) { ?>
-        <?=$euro ?> Korun je <?=$euro / $kc ?> Eur
+        <?=$euro ?> Korun je <?=$euro / euroczk ?> Eur
         <?php
         } elseif ($switch == 2) { ?>
-            <?=$euro ?> Eur je <?=$euro * $kc ?> KČ
+            <?=$euro ?> Eur je <?=$euro * euroczk ?> KČ
             <?php 
         }
     }
@@ -34,7 +34,7 @@ else { ?>
     </form>
 
     <?php
-} ?>
+}  ?>
 
 
 </body>
